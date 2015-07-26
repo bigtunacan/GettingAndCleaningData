@@ -69,8 +69,3 @@ colnames(merged_data) <- columns
 library(plyr)
 avg <- ddply(merged_data, .(merged_data$subject_id, activity_name), function(i) colMeans(i[, 1:66]))
 write.table(avg, "tiny_data.txt", row.name=FALSE)
-
-# list.files("./data")
-# TODO: Read it back in at the end
-#data <- read.table(file_path, header = TRUE) #if they used some other way of saving the file than a default write.table, this step will be different
-#View(data)
